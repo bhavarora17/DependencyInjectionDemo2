@@ -7,12 +7,14 @@ import org.springframework.stereotype.Service;
 /**
  * Created by barora on 12/29/2017.
  */
+
 @Service
+@Profile("es")
 @Primary
-@Profile("en")
-public class PrimaryGreetingService implements GreetingService{
+public class PrimarySpanishGreetingService implements GreetingService {
+	
 	@Override
 	public String sayGreeting() {
-		return "Primary Greeting";
+		return "Spanish Service";
 	}
 }
