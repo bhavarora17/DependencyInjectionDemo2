@@ -13,10 +13,10 @@ import org.springframework.stereotype.Controller;
 public class PropertyInjectedController {
 	
 	@Autowired
-	public GreetingService greetingServiceImpl;// the name tells the bean to be injected, but see if the primary takes over
+	public GreetingService greetingService;// the name tells the bean to be injected, but see if the primary takes over
 	
 	public String sayHello(){
-		return greetingServiceImpl.sayGreeting();
+		return greetingService.sayGreeting();
 	}
 	
 
