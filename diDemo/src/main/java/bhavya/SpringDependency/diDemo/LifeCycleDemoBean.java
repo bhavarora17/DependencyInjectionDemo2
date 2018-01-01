@@ -5,6 +5,7 @@ import org.springframework.beans.factory.*;
 import org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -12,6 +13,7 @@ import javax.annotation.PreDestroy;
 /**
  * Created by barora on 12/29/2017.
  */
+@Component
 public class LifeCycleDemoBean implements InitializingBean, DisposableBean, BeanNameAware, BeanFactoryAware, ApplicationContextAware{
 	
 	public LifeCycleDemoBean() {
