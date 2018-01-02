@@ -1,6 +1,6 @@
 package bhavya.SpringDependency.diDemo.controllers;
 
-import bhavya.SpringDependency.diDemo2.services.GreetingService;
+import bhavya.SpringDependency.diDemo.services.GreetingService;
 import org.springframework.stereotype.Controller;
 
 /**

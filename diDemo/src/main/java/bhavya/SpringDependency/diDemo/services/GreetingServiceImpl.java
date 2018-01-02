@@ -1,4 +1,4 @@
-package bhavya.SpringDependency.diDemo2.services;
+package bhavya.SpringDependency.diDemo.services;
 
 import org.springframework.stereotype.Service;
 

@@ -1,14 +1,17 @@
+/*
 package bhavya.SpringDependency.diDemo.controllers;
 
-import bhavya.SpringDependency.diDemo2.services.GreetingServiceImpl;
+import bhavya.SpringDependency.diDemo.services.GreetingServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+*/
 /**
  * Created by barora on 12/29/2017.
- */
+ *//*
+
 public class PropertyInjectedControllerTest {
 	
 	private PropertyInjectedController propertyInjectedController;
@@ -24,3 +27,4 @@ public class PropertyInjectedControllerTest {
 		assertEquals(GreetingServiceImpl.HELLO_BHAVYA, propertyInjectedController.sayHello());
 	}
 }
+*/
