@@ -1,9 +1,8 @@
 package bhavya.SpringDependency.diDemo.controllers;
 
-import bhavya.SpringDependency.diDemo.services.GreetingService;
-import bhavya.SpringDependency.diDemo.services.GreetingServiceImpl;
+import bhavya.SpringDependency.diDemo2.services.GreetingService;
+import bhavya.SpringDependency.diDemo2.services.GreetingServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 /**

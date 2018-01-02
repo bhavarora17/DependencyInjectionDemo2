@@ -1,6 +1,6 @@
 package bhavya.SpringDependency.diDemo.controllers;
 
-import bhavya.SpringDependency.diDemo.services.GreetingServiceImpl;
+import bhavya.SpringDependency.diDemo2.services.GreetingServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 
