@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.PropertySources;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
 
@@ -14,7 +15,11 @@ import org.springframework.core.env.Environment;
  * Created by barora on 1/4/2018.
  */
 @Configuration
-@PropertySource({"classpath:jms.properties", "classpath:datasource.properties" })//switching the properties files switches the order of use.
+//@PropertySource({"classpath:jms.properties", "classpath:datasource.properties" })//switching the properties files switches the order of use.
+@PropertySources({
+		@PropertySource("classpath:datasource.properties"),
+		@PropertySource("classpath:jms.properties")
+		})
 public class PropertyConfig {
 
 	@Autowired
