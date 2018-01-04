@@ -3,6 +3,7 @@ package bhavya.SpringDependency.diDemo;
 import bhavya.SpringDependency.diDemo.controllers.MyController;
 import bhavya.SpringDependency.diDemo.controllers.PropertyInjectedController;
 import bhavya.SpringDependency.diDemo.examplebeans.FakeDataSource;
+import bhavya.SpringDependency.diDemo.examplebeans.FakeJmsBroker;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -23,6 +24,9 @@ public class DiDemoApplication {
 		
 		FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean(FakeDataSource.class);
 		System.out.println(fakeDataSource.getUser());
+		
+		FakeJmsBroker fakeJmsBroker = (FakeJmsBroker) ctx.getBean(FakeJmsBroker.class);
+		System.out.println(fakeJmsBroker.getUsername());
 	}
 	
 }

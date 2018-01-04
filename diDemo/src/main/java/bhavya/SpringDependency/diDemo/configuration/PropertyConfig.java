@@ -1,19 +1,25 @@
 package bhavya.SpringDependency.diDemo.configuration;
 
 import bhavya.SpringDependency.diDemo.examplebeans.FakeDataSource;
+import bhavya.SpringDependency.diDemo.examplebeans.FakeJmsBroker;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.core.env.Environment;
 
 /**
  * Created by barora on 1/4/2018.
  */
 @Configuration
-@PropertySource("classpath:datasource.properties")
+@PropertySource({"classpath:jms.properties", "classpath:datasource.properties" })//switching the properties files switches the order of use.
 public class PropertyConfig {
 
+	@Autowired
+	Environment env;
+	
 	@Value("${bhavya.username}")
 	String user;
 	
@@ -26,11 +32,21 @@ public class PropertyConfig {
 	@Bean
 	public FakeDataSource fakeDataSource(){
 		FakeDataSource fakeDataSource = new FakeDataSource();
-		fakeDataSource.setUser(user);
+		fakeDataSource.setUser(env.getProperty("USERNAME"));
 		fakeDataSource.setPassword(password);
 		fakeDataSource.setUrl(url);
 		
 		return fakeDataSource;
+	}
+	
+	@Bean
+	public FakeJmsBroker fakeJmsBroker(){
+		FakeJmsBroker fakeJmsBroker = new FakeJmsBroker();
+		fakeJmsBroker.setUsername(user);
+		fakeJmsBroker.setPassword(password);
+		fakeJmsBroker.setUrl(url);
+		
+		return fakeJmsBroker;
 	}
 	
 	@Bean
