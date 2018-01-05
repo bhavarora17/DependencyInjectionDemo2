@@ -16,10 +16,6 @@ import org.springframework.core.env.Environment;
  */
 @Configuration
 //@PropertySource({"classpath:jms.properties", "classpath:datasource.properties" })//switching the properties files switches the order of use.
-@PropertySources({
-		@PropertySource("classpath:datasource.properties"),
-		@PropertySource("classpath:jms.properties")
-		})
 public class PropertyConfig {
 
 	@Autowired
@@ -34,6 +30,15 @@ public class PropertyConfig {
 	@Value("${bhavya.dburl}")
 	String url;
 	
+	@Value("${bhavya.jms.username}")
+	String jmsuser;
+	
+	@Value("${bhavya.jms.password}")
+	String jmspassword;
+	
+	@Value("${bhavya.jms.dburl}")
+	String jmsurl;
+	
 	@Bean
 	public FakeDataSource fakeDataSource(){
 		FakeDataSource fakeDataSource = new FakeDataSource();
@@ -47,16 +52,10 @@ public class PropertyConfig {
 	@Bean
 	public FakeJmsBroker fakeJmsBroker(){
 		FakeJmsBroker fakeJmsBroker = new FakeJmsBroker();
-		fakeJmsBroker.setUsername(user);
-		fakeJmsBroker.setPassword(password);
-		fakeJmsBroker.setUrl(url);
+		fakeJmsBroker.setUsername(jmsuser);
+		fakeJmsBroker.setPassword(jmspassword);
+		fakeJmsBroker.setUrl(jmsurl);
 		
 		return fakeJmsBroker;
-	}
-	
-	@Bean
-	public static PropertySourcesPlaceholderConfigurer properties(){
-		PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
-		return propertySourcesPlaceholderConfigurer;
 	}
 }

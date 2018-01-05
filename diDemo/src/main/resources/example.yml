@@ -1,0 +1,36 @@
+# this is a comment
+
+name: john
+
+names: #Comment
+    - John
+    - Paul
+    - Ringo
+
+poung_sign: "#"
+
+book: #more complex objects
+    author: Joe Buck
+    publisher: random house
+
+truth: yes #boolena
+
+another_truth: True #boolean
+
+moretrue: true #boolean
+
+false: no #boolean
+
+string_val: "This is it's quotes"
+
+colon_string: "my courses: one two three"
+
+include_new_line: |
+    asdf asdf asd
+    asd asd asd
+    asd asd asd
+
+ignore_new_lines: >
+    this is
+    just one long
+    string
